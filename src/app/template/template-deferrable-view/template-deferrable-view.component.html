@@ -1,0 +1,14 @@
+<h2 #trigger>Deferrable View</h2>
+<!-- on idle, on interaction, on timer(2s), on hover, on viewport, on immediate e pre fetch on ???  -->
+
+<button (click)="isTrue = true">Acionar</button>
+
+@defer (when loadingData$ | async) {
+  <app-new-component/>
+}@placeholder(minimum 3s) {
+  <p>Mostrar Antes de Carregar Algo</p>
+}@loading (after 2s; minimum 5s) {
+  <p>Spinner ou Loading</p>
+}@error {
+  <p>Caso não consiga carregar, vai mostrar isso aqui</p>
+}

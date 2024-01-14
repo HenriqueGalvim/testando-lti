@@ -1,0 +1,17 @@
+<h1>Testando</h1>
+
+
+
+<h2>Template</h2>
+<h3>Text Interpolation</h3>
+{{ name() }} {{ lastname() }}
+<h4>{{ fullName() }}</h4>
+
+<ul>
+  @for (item of arr(); track item) {
+  <li>{{ item }}</li>
+  }
+</ul>
+
+<button (click)="updateName()">Update Name</button>
+<button (click)="updateArray()">Update Array</button>

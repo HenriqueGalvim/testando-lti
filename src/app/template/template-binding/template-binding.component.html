@@ -1,0 +1,36 @@
+<h2>Template</h2>
+<h3>Text Interpolation</h3>
+<p>{{ name }} - {{ age }}</p>
+
+<button [disabled]="isDisabled">Botão</button>
+
+<!-- Forma interessante -->
+<p [class.background-blue]="age > 32" [class.background-red]="age <= 32">
+  {{ name }}
+</p>
+
+<p [style.text-decoration]="isTextDecoration">{{ age }}</p>
+
+<button (click)="sum()">Adiciona</button>
+<button (click)="sub()">Subtrai</button>
+
+<input (keydown.shift.t)="onKeyDown($event)" />
+
+<div
+  (mousemove)="onMouseMove($event)"
+  style="background-color: red; width: 240px; height: 240px; margin-top: 10px"
+></div>
+
+<input [(ngModel)]="name" />
+
+<h3>Template</h3>
+<h2>Diretivas de Atributos</h2>
+<div
+  [ngClass]="{ 'background-blue': age > 30 }"
+  [ngStyle]="{
+  color: age > 20 ? 'green' : 'red',
+  'font-size': age > 20 ? '20px' : '14px',
+ }"
+>
+  Teste
+</div>

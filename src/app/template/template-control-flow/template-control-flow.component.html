@@ -1,0 +1,59 @@
+<h1>Control Flow</h1>
+<h3>IF e FOR e SWITCH</h3>
+
+<!-- @if (isTrue) { Sim, é verdadeiro } @else { Não } -->
+
+@if (loadingData$ | async; as
+data) {
+
+<ul>
+  @for(item of data; track item){
+    <li>{{ item }}</li>
+  }@empty {
+    <li>Não contém valores</li>
+  }
+</ul>
+}@else {
+<p>Carregando...</p>
+}
+
+@for (item of itens; track item.name;
+      let i = $index;
+      let c = $count;
+      let f = $first;
+      let l = $last;
+      let e = $even;
+      let o = $odd;
+) {
+    <h1>{{item.name}}</h1>
+    <p>- {{i}}</p> <!-- Posição do elemento -->
+    <p>- {{c}}</p> <!-- Quantos elementos tem dentro desse array -->
+    <p>- {{f}}</p> <!-- Pergunta se é o primeiro item do array -->
+    <p>- {{l}}</p> <!-- Pergunta se é o ultimo   item do array -->
+    <p>- {{e}}</p> <!-- Pergunta se é par -->
+    <p>- {{o}}</p> <!-- Pergunta se é impar -->
+    <br>
+}
+
+<input type="text" #name>
+<button (click)="addNewName(name.value)" >Add name</button>
+
+<!-- @for(item of loadingData$ | async; track item){
+  <li>{{ item }}</li>
+} -->
+
+<h1>Switch Case</h1>
+
+@switch (switchCondition) {
+  @case ('A') {
+    <p>Sim, sua letra é A</p>
+  }
+
+  @case ('B') {
+    <p>Sim, sua letra é B</p>
+  }
+
+  @default {
+    <p>Os dados não foram encontrados</p>
+  }
+}

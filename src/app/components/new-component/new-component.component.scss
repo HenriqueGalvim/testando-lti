@@ -1,0 +1,15 @@
+:host{
+  h2{
+    background-color: red;
+  }
+}
+
+:host-context(.theme-dark){ /* O host-context faz referencia ao elemento pai que o contem, então se o que o contem é uma section ou div que tenha essa classe, então os seguintes estilos serão aplicados */
+
+  h2{
+    background-color: #000;
+    color: #FFF;
+  }
+}
+
+

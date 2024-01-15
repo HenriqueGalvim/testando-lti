@@ -1,23 +1,25 @@
-import { Component, OnInit, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { TesteService } from '../teste.service';
+import { OAuthService,UrlHelperService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-signals',
   standalone: true,
   imports: [],
+  providers:[OAuthService,UrlHelperService],
   templateUrl: './signals.component.html',
   styleUrl: './signals.component.scss'
 })
-export class SignalsComponent implements OnInit {
+export class SignalsComponent {
   constructor(private testeService: TesteService){
     effect(() => {
       console.log(this.name())
     })
   }
-  ngOnInit(): void {
+
+  enviar(){
     this.testeService.sendRequest().subscribe()
   }
-
   public name = signal('Dener');
   public lastname = signal('Troquatte')
 

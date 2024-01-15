@@ -7,10 +7,12 @@ import { TemplateVariablesComponent } from './template/template-variables/templa
 import { TemplateControlFlowComponent } from './template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewComponent } from './template/template-deferrable-view/template-deferrable-view.component';
 import { SignalsComponent } from './signals/signals.component';
+import { OAuthService, UrlHelperService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  providers:[OAuthService,UrlHelperService],
   imports: [
     CommonModule,
     RouterOutlet,

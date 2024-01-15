@@ -1,3 +1,4 @@
+import { OAuthService, provideOAuthClient } from 'angular-oauth2-oidc';
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -6,5 +7,5 @@ import { TesteService } from './teste.service';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), TesteService, provideHttpClient()]
+  providers: [provideRouter(routes),OAuthService, TesteService, provideHttpClient(),provideOAuthClient()]
 };
